@@ -1,20 +1,29 @@
-// Dashboard.js
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const handleLogout = () => {
         localStorage.removeItem('token');
-        history.push('/login');
+        navigate('/login');
     };
 
     return (
-        <div>
-            <h1>Dashboard</h1>
-            <p>This is a protected route, accessible only to authenticated users.</p>
-            <button onClick={handleLogout}>Logout</button>
+        <div className="container mt-5">
+            <div className="row justify-content-center">
+                <div className="col-md-8">
+                    <div className="card">
+                        <div className="card-header text-center">
+                            <h3>Dashboard</h3>
+                        </div>
+                        <div className="card-body">
+                            <p>Welcome to your dashboard! This is a protected route.</p>
+                            <button onClick={handleLogout} className="btn btn-danger w-100">Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
