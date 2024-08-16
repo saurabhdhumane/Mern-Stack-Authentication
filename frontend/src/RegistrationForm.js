@@ -65,11 +65,6 @@ const RegistrationForm = () => {
                                 </div>
                                 <button type="submit" className="btn btn-primary w-100">Register</button>
                             </form>
-                            <div>
-                                <div className='container mt-3 '>
-                                    <a className='btn btn-primary' href="/login">Login</a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

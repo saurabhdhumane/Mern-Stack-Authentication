@@ -2,15 +2,18 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginForm from './LoginForm';
 import RegistrationForm from './RegistrationForm';
+import Dashboard from './Dashboard';
 import ProtectedRoute from './ProtectedRoute';
 import PublicRoute from './PublicRoute';
-import Dashboard from './Dashboard';
+import Navbar from './Navbar';
+import Home from './Home';
 
 function App() {
-    const [auth, setAuth] = useState(!!localStorage.getItem('token'));
+    const [isAuthenticated, setAuth] = useState(!!localStorage.getItem('token'));
 
     return (
         <Router>
+            <Navbar isAuthenticated={isAuthenticated} setAuth={setAuth} />
             <div className="App">
                 <Routes>
                     <Route path="/register" element={
@@ -28,7 +31,7 @@ function App() {
                             <Dashboard />
                         </ProtectedRoute>
                     } />
-                    <Route path="/" element={<h1>Welcome to the Home Page</h1>} />
+                    <Route path="/" element={<Home />} />
                 </Routes>
             </div>
         </Router>

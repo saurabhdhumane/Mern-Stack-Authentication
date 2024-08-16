@@ -57,11 +57,6 @@ const LoginForm = ({ setAuth }) => {
                                     </div>
                                     <button type="submit" className="btn btn-primary w-100">Login</button>
                                 </form>
-                                <div>
-                                    <div className='container mt-3 '>
-                                        <a className='btn btn-primary' href="/register">Register</a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
